@@ -1,5 +1,6 @@
 import checklistImage from "../assets/undraw_checklist_bwxa.svg";
 import dashboardImage from "../assets/undraw_dashboard_p93p.svg";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -15,7 +16,7 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <button className="btn-primary">Começar agora</button>
+            <Link to="/dashboard" className="btn-primary">Começar agora</Link>
             <button className="btn-secondary">Saiba mais</button>
           </div>
         </div>

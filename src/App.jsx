@@ -1,14 +1,30 @@
-import Navbar from "./components/Navbar";
-import Home from "./pages/home";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import NovaTarefa from "./pages/NovaTarefa";
+import EditarTarefa from "./pages/EditarTarefa";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <Home />
-    </>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/nova-tarefa" element={<NovaTarefa />} />
+        <Route path="/editar-tarefa" element={<EditarTarefa />} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
 
