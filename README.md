@@ -22,10 +22,8 @@ Frontend:
 - JavaScript
 - HTML
 - CSS
-
-Futuramente:
 - Spring Boot (Backend)
-- MySQL ou PostgreSQL (Banco de Dados)
+- MySQL (Banco de Dados)
 
 ---
 
