@@ -10,7 +10,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const response = await fetch("http://localhost:8080/auth/register", {
+      const response = await fetch("https://controle-de-tarefas-backend-1.onrender.com/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
