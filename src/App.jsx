@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import NovaTarefa from "./pages/NovaTarefa";
 import EditarTarefa from "./pages/EditarTarefa";
+import Usuarios from "./pages/Usuarios";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/nova-tarefa" element={<NovaTarefa />} />
         <Route path="/editar-tarefa" element={<EditarTarefa />} />
+        <Route path="/usuarios" element={<Usuarios />} />
       </Routes>
 
       <Footer />

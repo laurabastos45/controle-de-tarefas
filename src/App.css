@@ -32,15 +32,23 @@ body {
   gap: 32px;
 }
 
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
 .navbar-links a:hover {
   color: #38bdf8;
 }
 
-/* HERO */
+/* HOME */
 
 .home {
   padding: 40px 60px;
 }
+
+/* HERO */
 
 .hero {
   display: flex;
@@ -81,6 +89,15 @@ body {
 .hero-buttons {
   display: flex;
   gap: 16px;
+}
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
 }
 
 .btn-primary {
@@ -163,24 +180,8 @@ body {
   color: #cbd5e1;
 }
 
-/* RESPONSIVO */
+/* FOOTER */
 
-@media (max-width: 900px) {
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-image {
-    justify-content: center;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
 .footer {
   margin-top: 80px;
   padding: 40px 60px 20px;
@@ -206,16 +207,9 @@ body {
   color: #94a3b8;
   font-size: 14px;
 }
-.auth-switch {
-  margin-top: 20px;
-  color: #cbd5e1;
-  font-size: 14px;
-}
 
-.auth-switch a {
-  color: #38bdf8;
-  font-weight: bold;
-}
+/* LOGIN */
+
 .login-page {
   min-height: calc(100vh - 180px);
   display: flex;
@@ -238,13 +232,11 @@ body {
 .login-card h1 {
   font-size: 42px;
   margin-bottom: 12px;
-  line-height: 1.1;
 }
 
 .login-card p {
   color: #cbd5e1;
   margin-bottom: 24px;
-  font-size: 16px;
 }
 
 .login-form {
@@ -273,14 +265,6 @@ body {
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
 }
 
-.login-form .btn-primary {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  font-size: 18px;
-  margin-top: 6px;
-}
-
 .auth-switch {
   margin-top: 22px;
   font-size: 15px;
@@ -292,246 +276,9 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
-.dashboard-page {
-  padding: 50px 60px;
-  min-height: 70vh;
-}
 
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-  gap: 20px;
-}
+/* DASHBOARD */
 
-.dashboard-header h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.dashboard-header p {
-  color: #cbd5e1;
-}
-
-.tasks-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.task-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  padding: 24px;
-  transition: 0.3s;
-}
-
-.task-card:hover {
-  transform: translateY(-4px);
-}
-
-.task-card h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
-}
-
-.task-card p {
-  color: #cbd5e1;
-  margin-bottom: 18px;
-  line-height: 1.5;
-}
-
-.task-info {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.status,
-.priority {
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.pending {
-  background: rgba(250, 204, 21, 0.15);
-  color: #facc15;
-}
-
-.progress {
-  background: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
-}
-
-.done {
-  background: rgba(34, 197, 94, 0.15);
-  color: #4ade80;
-}
-
-.high {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-}
-
-.medium {
-  background: rgba(249, 115, 22, 0.15);
-  color: #fb923c;
-}
-
-@media (max-width: 900px) {
-  .dashboard-page {
-    padding: 30px 24px;
-  }
-
-  .dashboard-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .tasks-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.nova-tarefa {
-  padding: 60px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.task-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.task-form input,
-.task-form textarea,
-.task-form select {
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #475569;
-  background: rgba(255,255,255,0.05);
-  color: white;
-}
-
-.task-form textarea {
-  min-height: 120px;
-}
-.nova-tarefa {
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.task-form-card {
-  width: 100%;
-  max-width: 650px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 32px;
-}
-
-.task-form-card h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.task-form-card p {
-  color: #cbd5e1;
-  margin-bottom: 24px;
-}
-
-.task-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.task-form input,
-.task-form textarea,
-.task-form select {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 1px solid #475569;
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  outline: none;
-  font-size: 15px;
-}
-
-.task-form textarea {
-  min-height: 120px;
-  resize: none;
-}
-
-.task-form-actions {
-  display: flex;
-  gap: 16px;
-  margin-top: 10px;
-}
-
-.task-info {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  margin-bottom: 18px;
-}
-
-.task-priority {
-  font-size: 13px;
-  padding: 6px 12px;
-  border-radius: 20px;
-}
-
-.high {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-}
-
-.medium {
-  background: rgba(249, 115, 22, 0.15);
-  color: #fb923c;
-}
-
-.task-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.btn-edit,
-.btn-delete {
-  padding: 10px 16px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn-edit {
-  background: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
-}
-
-.btn-delete {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-}
-.btn-primary,
-.btn-secondary {
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
 .dashboard {
   padding: 60px;
 }
@@ -631,12 +378,64 @@ body {
   margin-top: 15px;
 }
 
+/* FORMULÁRIO */
+
+.nova-tarefa {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.task-form-card {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.task-form-card h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.task-form-card p {
+  color: #cbd5e1;
+  margin-bottom: 24px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #475569;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  outline: none;
+  font-size: 15px;
+}
+
+.task-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* BOTÕES PADRÃO */
+
 .btn-edit,
 .btn-delete {
   padding: 10px 14px;
   border-radius: 8px;
   font-weight: bold;
-  text-decoration: none;
   border: none;
   cursor: pointer;
 }
@@ -651,7 +450,94 @@ body {
   color: white;
 }
 
+/* USUÁRIOS */
+
+.usuarios-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.usuarios-container {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.usuarios-container h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  color: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+th {
+  background: rgba(37, 99, 235, 0.8);
+  color: white;
+  font-size: 16px;
+}
+
+th,
+td {
+  padding: 18px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+tr:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:first-child {
+  background: #2563eb;
+  color: white;
+}
+
+button:last-child {
+  background: #dc2626;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* RESPONSIVO */
+
 @media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    justify-content: center;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
   .dashboard {
     padding: 30px 24px;
   }
@@ -665,4 +551,9 @@ body {
   .tasks-container {
     grid-template-columns: 1fr;
   }
+
+  .usuarios-container {
+    overflow-x: auto;
+  }
+
 }
