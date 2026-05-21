@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Usuarios() {
 
   const [usuarios, setUsuarios] = useState([]);
+
+  const navigate = useNavigate();
 
   // carregar usuários
   const carregarUsuarios = async () => {
@@ -84,7 +87,16 @@ function Usuarios() {
   };
 
   useEffect(() => {
+
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+
+    if (!usuarioLogado) {
+      navigate("/login");
+      return;
+    }
+
     carregarUsuarios();
+
   }, []);
 
   return (

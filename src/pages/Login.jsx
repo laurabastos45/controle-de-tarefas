@@ -34,9 +34,9 @@ function Login() {
       console.log("USUÁRIO:", data);
 
       // opcional (recomendado): salvar usuário
-      localStorage.setItem("usuario", JSON.stringify(data));
+      localStorage.setItem("usuarioLogado", "true");
 
-      navigate("/dashboard");
+      navigate("/usuarios");
 
     } catch (error) {
       console.error("ERRO:", error);
