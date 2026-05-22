@@ -36,7 +36,7 @@ function Login() {
       // opcional (recomendado): salvar usuário
       localStorage.setItem("usuarioLogado", "true");
 
-      navigate("/usuarios");
+      navigate("/dashboard");
 
     } catch (error) {
       console.error("ERRO:", error);

@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import NovaTarefa from "./pages/NovaTarefa";
 import EditarTarefa from "./pages/EditarTarefa";
 import Usuarios from "./pages/Usuarios";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -19,10 +20,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/nova-tarefa" element={<NovaTarefa />} />
-        <Route path="/editar-tarefa" element={<EditarTarefa />} />
-        <Route path="/usuarios" element={<Usuarios />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/nova-tarefa"element={<ProtectedRoute><NovaTarefa /></ProtectedRoute>} />
+        <Route path="/editar-tarefa"element={<ProtectedRoute><EditarTarefa /></ProtectedRoute>} />
+        <Route path="/usuarios"element={<ProtectedRoute><Usuarios /></ProtectedRoute>} />
       </Routes>
 
       <Footer />
