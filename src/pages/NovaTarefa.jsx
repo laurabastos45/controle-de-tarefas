@@ -1,46 +1,100 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function NovaTarefa() {
+
+  const navigate = useNavigate();
+
+  const [descricao, setDescricao] = useState("");
+  const [observacao, setObservacao] = useState("");
+
+  const criarTarefa = async (e) => {
+
+    e.preventDefault();
+
+    try {
+
+      await fetch(
+        "https://controle-de-tarefas-backend-1.onrender.com/tarefas",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json"
+          },
+
+          body: JSON.stringify({
+            descricao,
+            observacao
+          })
+        }
+      );
+
+      alert("Tarefa criada com sucesso!");
+
+      navigate("/dashboard");
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert("Erro ao criar tarefa");
+
+    }
+  };
+
   return (
+
     <main className="nova-tarefa">
+
       <div className="task-form-card">
+
         <h1>Nova Tarefa</h1>
-        <p>Preencha os dados para adicionar uma nova tarefa.</p>
 
-        <form className="task-form">
-          <input type="text" placeholder="Título da tarefa" />
+        <p>
+          Preencha os dados para adicionar uma nova tarefa.
+        </p>
 
-          <textarea placeholder="Descrição da tarefa"></textarea>
+        <form
+          className="task-form"
+          onSubmit={criarTarefa}
+        >
 
-          <select defaultValue="">
-            <option value="" disabled>
-              Selecione o status
-            </option>
-            <option>Pendente</option>
-            <option>Em andamento</option>
-            <option>Concluída</option>
-          </select>
+          <input
+            type="text"
+            placeholder="Descrição"
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+          />
 
-          <select defaultValue="">
-            <option value="" disabled>
-              Selecione a prioridade
-            </option>
-            <option>Baixa</option>
-            <option>Média</option>
-            <option>Alta</option>
-          </select>
+          <textarea
+            placeholder="Observação"
+            value={observacao}
+            onChange={(e) => setObservacao(e.target.value)}
+          ></textarea>
 
           <div className="task-form-actions">
-            <Link to="/dashboard" className="btn-primary">
-              Criar tarefa
-            </Link>
 
-            <Link to="/dashboard" className="btn-secondary">
+            <button
+              type="submit"
+              className="btn-primary"
+            >
+              Criar tarefa
+            </button>
+
+            <Link
+              to="/dashboard"
+              className="btn-secondary"
+            >
               Cancelar
             </Link>
+
           </div>
+
         </form>
+
       </div>
+
     </main>
   );
 }
