@@ -36,8 +36,14 @@ function Navbar() {
 
           <>
             <Link to="/dashboard">Dashboard</Link>
-            <Link to="/nova-tarefa">Nova Tarefa</Link>
-            <Link to="/usuarios">Usuários</Link>
+
+            <Link to="/usuarios">
+              Usuários
+            </Link>
+
+            <Link to="/status">
+              Status
+            </Link>
 
             <button
               className="logout-btn"
