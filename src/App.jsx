@@ -10,6 +10,7 @@ import NovaTarefa from "./pages/NovaTarefa";
 import EditarTarefa from "./pages/EditarTarefa";
 import Usuarios from "./pages/Usuarios";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Status from "./pages/Status";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path="/nova-tarefa"element={<ProtectedRoute><NovaTarefa /></ProtectedRoute>} />
         <Route path="/editar-tarefa/:id"element={<ProtectedRoute><EditarTarefa /></ProtectedRoute>} />
         <Route path="/usuarios"element={<ProtectedRoute><Usuarios /></ProtectedRoute>} />
+        <Route path="/status" element={<ProtectedRoute><Status /></ProtectedRoute>} />
+
       </Routes>
 
       <Footer />
