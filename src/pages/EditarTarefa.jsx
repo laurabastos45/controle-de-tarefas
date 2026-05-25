@@ -1,41 +1,101 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 function EditarTarefa() {
+
+  const navigate = useNavigate();
+
+  const { id } = useParams();
+
+  const [descricao, setDescricao] = useState("");
+  const [observacao, setObservacao] = useState("");
+
+  const editarTarefa = async (e) => {
+
+    e.preventDefault();
+
+    try {
+
+      await fetch(`https://controle-de-tarefas-backend-1.onrender.com/tarefas/${id}`, {
+
+        method: "PUT",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          descricao,
+          observacao
+        })
+
+      });
+
+      alert("Tarefa atualizada com sucesso!");
+
+      navigate("/dashboard");
+
+    } catch (error) {
+
+      console.error(error);
+      alert("Erro ao atualizar tarefa");
+
+    }
+  };
+
   return (
+
     <main className="nova-tarefa">
+
       <div className="task-form-card">
+
         <h1>Editar Tarefa</h1>
+
         <p>Atualize as informações da tarefa.</p>
 
-        <form className="task-form">
-          <input type="text" defaultValue="Estudar React" />
+        <form
+          className="task-form"
+          onSubmit={editarTarefa}
+        >
 
-          <textarea defaultValue="Revisar componentes, props e useState."></textarea>
+          <input
+            type="text"
+            placeholder="Descrição da tarefa"
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+          />
 
-          <select defaultValue="Pendente">
-            <option>Pendente</option>
-            <option>Em andamento</option>
-            <option>Concluída</option>
-          </select>
-
-          <select defaultValue="Alta">
-            <option>Baixa</option>
-            <option>Média</option>
-            <option>Alta</option>
-          </select>
+          <textarea
+            placeholder="Observação"
+            value={observacao}
+            onChange={(e) => setObservacao(e.target.value)}
+          />
 
           <div className="task-form-actions">
-            <Link to="/dashboard" className="btn-primary">
-              Salvar alterações
-            </Link>
 
-            <Link to="/dashboard" className="btn-secondary">
+            <button
+              type="submit"
+              className="btn-primary"
+            >
+              Salvar alterações
+            </button>
+
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={() => navigate("/dashboard")}
+            >
               Cancelar
-            </Link>
+            </button>
+
           </div>
+
         </form>
+
       </div>
+
     </main>
+
   );
 }
 
