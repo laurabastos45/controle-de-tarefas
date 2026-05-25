@@ -22,7 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/nova-tarefa"element={<ProtectedRoute><NovaTarefa /></ProtectedRoute>} />
-        <Route path="/editar-tarefa"element={<ProtectedRoute><EditarTarefa /></ProtectedRoute>} />
+        <Route path="/editar-tarefa/:id"element={<ProtectedRoute><EditarTarefa /></ProtectedRoute>} />
         <Route path="/usuarios"element={<ProtectedRoute><Usuarios /></ProtectedRoute>} />
       </Routes>
 
